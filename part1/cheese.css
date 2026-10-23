@@ -1,0 +1,67 @@
+/*
+  Name: Khang Nguyen
+  Repository: https://github.com/khanggn/cse134b-hw3
+*/
+
+/* Typography & inheritance */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #332421;
+    line-height: 2;
+    max-width: 50%;
+    margin: auto;
+    padding: 2%;
+}
+/* h1, h2 (rem sizes) */
+h1 {
+    font-size: 2rem;
+}
+h2 {
+    font-size: 1.5rem;
+}
+/* .latin and #warning */
+.latin {
+    font-style: italic;
+}
+#warning {
+    background-color: #FFCCCB;
+    padding: 12px;
+    border-radius: 12px;
+}
+/* Layout and box model: page centering, blockquote */
+blockquote {
+    border: solid 2px #89F336;
+    padding: 2%;
+    margin: 5%;
+    border-radius: 12px;
+}
+/* Hover and focus states */
+a:hover {
+    background-color: aquamarine;
+    color:#332421;
+}
+a:focus {
+    background-color: #005385;
+    color: white;
+}
+button:focus, input:focus {
+    background-color: #89F336;
+    font-weight: bold;
+    outline: solid 3px black;
+    outline-offset: 2px;
+}
+
+/* Cascade demo */
+legend {
+    color:white;
+}
+legend {
+    color: #8B8000;
+}
+/* 
+Here we can see both of the rules are using the same selector, the legend element.
+The one that comes first, sets all legend text to be white first. 
+However, right after the first rule the second rule also sets the legend text color to be the yellow hex.
+The first rule gets overridden by the second rule because when there is a tie (same specificity), the rule that comes later wins. 
+Hence the term cascading. 
+*/
