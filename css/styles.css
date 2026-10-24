@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=clash-display@600,700&display=swap");
+
+:root {
+    --color-bg: #262626;
+    --color-text: #E8E8E3;
+    --color-heading: #FFFFFF;
+    --color-accent: #C4B5FD;
+    --color-muted: #4E4A5C;
+
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-heading: "Clash Display", sans-serif;
+
+    --text-sm: 0.875rem;
+    --text-base: 1.125rem;
+    --text-h1: 3.5rem;
+    --text-h2: 2.25rem;
+    --text-h3: 1.375rem;
+
+    --page-padding: 1.5rem;
+
+    --color-surface: #303030;
+    --radius: 1rem;
+
+}
+/* Styling General elements */
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: var(--text-h1);
+}
+
+h2 {
+    font-size: var(--text-h2);
+}
+
+h3 {
+    font-size: var(--text-h3);
+}
+
+header, main, footer {
+    padding: 0 var(--page-padding);
+}
+
+/* nav bar */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* child combinator: targets only the logo link directly inside the header, not the nav links */
+header > a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+/* descendant combinator: targets every link inside the nav */
+nav a {
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+a {
+    color: var(--color-accent);
+}
+
+a:hover {
+    color: var(--color-heading);
+}
+
+/* HOMEPAGE */
+/* hero section */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 4rem;
+}
+
+.hero strong {
+    color: var(--color-accent);
+}
+
+.hero-action {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero-action a {
+    padding: 0.75em 1.5em;
+    border: 2px solid var(--color-accent);
+    border-radius: 999px;
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* adjacent sibling combinator: targets the second hero button to make it an outline button */
+.hero-action a + a {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+.hero-action a:hover {
+    background-color: var(--color-heading);
+    border-color: var(--color-heading);
+    color: var(--color-bg);
+}
+
+
+/* featured tracks */
+.featured {
+    padding-block: 3rem;
+    display: grid; 
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+}
+
+.featured h2 {
+    margin: 0;
+}
+
+.featured > a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.featured > a:hover {
+    text-decoration: underline;
+}
+
+track-card {
+    display: block;
+}
+
+.card-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+track-card > article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1.25rem;
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
+
+track-card img {
+    width: 100%;
+    border-radius: calc(var(--radius)/2);
+}
+
+track-card h3 a {
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+track-card h3 a:hover{
+    color: var(--color-accent)
+}
+
+track-card span, .records article > span {
+    margin-top: auto;
+    align-self: flex-start;
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    background-color: var(--color-muted);
+    border-radius: 999px;
+}
+
+/* off the record */
+.records {
+    display: grid;
+    gap: 1.5rem;
+    padding-block: 3rem;
+}
+
+.records > h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.records article {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
+
+.records strong {
+    font-family: var(--font-heading);
+    font-size: var(--text-h2);
+    color: var(--color-accent);
+}
+
+.photos {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.photos img {
+    border-radius: calc(var(--radius) / 2);
+}
+
+.records article > span {
+    display: block;
+    width: fit-content;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.records article > a {
+    margin-top: auto;
+    align-self: flex-start;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.records article > a:hover {
+    text-decoration: underline;
+}
+
+/* footer */
+footer {
+    display: grid;
+    gap: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer b {
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer a {
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--color-accent);
+}
+
+/* attribute selector: footer links that open in a new tab get an arrow so users know they'll leave the site */
+footer a[target="_blank"]::after {
+    content: "↗";
+}
+
+footer p:last-child {
+    margin: 0;
+    font-size: var(--text-sm);
+}
+
+/* different screen sizes */
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    .hero picture {
+        grid-column: 2;
+        grid-row: 1 / span 3;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .records {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+    }
+
+    footer p:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --page-padding: 10rem;
+    }
+}

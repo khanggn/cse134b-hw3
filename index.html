@@ -9,7 +9,7 @@
     />
     <title>Khang Nguyen | Developer &amp; Designer</title>
     <link rel="icon" href="images/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/styles.css" />
     <script src="js/hello-world.js" defer></script>
   </head>
   <body>
@@ -42,14 +42,14 @@
       </nav>
     </header>
     <main>
-      <section>
+      <section class="hero">
         <h1>Hi, I'm Khang</h1>
         <p>
           I like to <strong>design</strong> and <strong>code</strong>. Whether
           it's for clients, hackathons, or just for fun, I'm
           <em>always</em> building something.
         </p>
-        <p>
+        <p class="hero-action">
           <a href="playlists.html">Listen to my work</a>
           <a href="contact.html">Get in touch</a>
         </p>
@@ -63,9 +63,10 @@
           />
         </picture>
       </section>
-      <section>
+      <section class="featured">
         <h2>Featured Tracks</h2>
         <a href="playlists.html">See all playlists</a>
+        <div class="card-grid">
         <track-card>
           <article>
             <img
@@ -123,9 +124,10 @@
             <span>UI/UX case study</span>
           </article>
         </track-card>
+        </div>
       </section>
 
-      <section>
+      <section class="records">
         <h2>Off the Records</h2>
         <article>
           <span>Wrapped</span>
@@ -139,6 +141,9 @@
         </article>
 
         <article>
+          <span>B-sides</span>
+          <h3>Off the Resume</h3>
+          <div class="photos">
           <img
             src="images/placeholder.jpg"
             alt="Khang taking pictures"
@@ -151,8 +156,7 @@
             width="120"
             height="120"
           />
-          <span>B-sides</span>
-          <h3>Off the Resume</h3>
+          </div>
           <p>What I'm into right now, and a few fun facts about me.</p>
           <a href="b-sides.html">Flip to the B-sides</a>
         </article>
