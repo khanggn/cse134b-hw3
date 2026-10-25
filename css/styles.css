@@ -49,13 +49,13 @@ h3 {
     font-size: var(--text-h3);
 }
 
-header, main, footer {
+body > header, main, body > footer {
     padding: 0 var(--page-padding);
 }
 
 /* nav bar */
 
-header {
+body > header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -269,7 +269,7 @@ track-card span, .records article > span {
 }
 
 /* footer */
-footer {
+body > footer {
     display: grid;
     gap: 1.5rem;
     padding-top: 2.5rem;
@@ -277,13 +277,13 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-footer b {
+body > footer b {
     font-family: var(--font-heading);
     font-size: var(--text-h3);
     color: var(--color-heading);
 }
 
-footer ul {
+body > footer ul {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -292,21 +292,21 @@ footer ul {
     padding: 0;
 }
 
-footer a {
+body > footer a {
     color: var(--color-text);
     text-decoration: none;
 }
 
-footer a:hover {
+body > footer a:hover {
     color: var(--color-accent);
 }
 
 /* attribute selector: footer links that open in a new tab get an arrow so users know they'll leave the site */
-footer a[target="_blank"]::after {
+body > footer a[target="_blank"]::after{
     content: "↗";
 }
 
-footer p:last-child {
+body > footer p:last-child {
     margin: 0;
     font-size: var(--text-sm);
 }
@@ -525,6 +525,104 @@ nav[aria-label="Playlists"] a:hover {
     border-radius: var(--radius);
 }
 
+/* ALL THREE CASE STUDY PAGES */
+.case-study {
+    display: grid;
+    column-gap: 3rem;
+    padding-block: 2rem;
+}
+
+.case-study > header {
+    display: grid;
+    gap: 1.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.case-study > header h1,
+.case-study > header p {
+    margin: 0;
+}
+
+.case-study img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.case-study > header ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.case-study > header li {
+    padding: 1rem;
+    font-size: var(--text-sm);
+    background-color: var(--color-surface);
+    border-radius: calc(var(--radius) / 2);
+}
+
+.case-study > header b {
+    display: block;
+    color: var(--color-heading);
+}
+
+.case-study > nav {
+    padding: 1.25rem;
+    background-color: var(--color-surface);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius);
+}
+
+.case-study > nav h2 {
+    margin: 0 0 0.75rem;
+    font-size: var(--text-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.case-study > nav ol {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.case-study > nav li {
+    padding-block: 0.25rem;
+}
+
+.case-study section {
+    padding-block: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-study section p,
+.case-study section ul {
+    max-width: 65ch;
+}
+
+.case-study section img {
+    margin-top: 1.5rem;
+}
+
+.case-study section li + li {
+    margin-top: 0.75rem;
+}
+
+.case-study > footer p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 2rem;
+    font-weight: 600;
+}
+
+.case-study > footer a {
+    text-decoration: none;
+}
+
 /* different screen sizes */
 @media (min-width: 768px) {
     .hero {
@@ -548,12 +646,12 @@ nav[aria-label="Playlists"] a:hover {
         grid-template-columns: 1fr 1fr;
     }
 
-    footer {
+    body > footer {
         grid-template-columns: 1fr auto;
         align-items: center;
     }
 
-    footer p:last-child {
+    body > footer p:last-child {
         grid-column: 1 / -1;
     }
 
@@ -616,6 +714,30 @@ nav[aria-label="Playlists"] a:hover {
 
     .top-artists li span {
         grid-column: 5;
+    }
+    .case-study {
+        grid-template-columns: 14rem 1fr;
+    }
+
+    .case-study > header,
+    .case-study > footer {
+        grid-column: 1 / -1;
+    }
+
+    .case-study > header ul {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .case-study > nav {
+        grid-column: 1;
+        grid-row: 2 / span 6;
+        align-self: start;
+        position: sticky;
+        top: 1.5rem;
+    }
+
+    .case-study section {
+        grid-column: 2;
     }
 }
 
