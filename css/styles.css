@@ -387,6 +387,32 @@ nav[aria-label="Playlists"] a:hover {
     font-size: var(--text-sm);
 }
 
+/* ABOUT PAGE */
+.about {
+    display: grid;
+    gap: 1rem;
+    padding-block: 3rem;
+}
+
+.about > img {
+    max-width: 15rem;
+    border-radius: var(--radius);
+}
+
+.about h1 {
+    margin: 0;
+}
+
+.about h1 ~ p {
+    margin: 0;
+    max-width: 65ch;
+}
+
+.about p:last-child {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
 /* different screen sizes */
 @media (min-width: 768px) {
     .hero {
@@ -438,6 +464,16 @@ nav[aria-label="Playlists"] a:hover {
 
     .playlist > ol {
         grid-column: 1 / -1;
+    }
+    .about {
+        grid-template-columns: auto 1fr;
+        column-gap: 3rem;
+        align-items: start;
+    }
+
+    .about > img {
+        grid-column: 1;
+        grid-row: 1 / span 6;
     }
 }
 
