@@ -413,6 +413,118 @@ nav[aria-label="Playlists"] a:hover {
     font-weight: 600;
 }
 
+/* WRAPPED PAGE */
+.wrapped {
+    display: grid;
+    column-gap: 3rem;
+}
+
+.wrapped section {
+    padding-block: 2.5rem;
+}
+
+.wrapped h2 {
+    margin-top: 0;
+}
+
+.wrapped-intro {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.wrapped-intro h1,
+.wrapped-intro > p {
+    margin: 0;
+}
+
+.stat {
+    padding: 2rem;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius);
+}
+
+.stat p {
+    margin: 0;
+}
+
+.stat strong {
+    font-family: var(--font-heading);
+    font-size: var(--text-h1);
+    line-height: 1;
+    color: var(--color-accent);
+}
+
+.top-artists ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: rank;
+}
+
+.top-artists li {
+    counter-increment: rank;
+    display: grid;
+    grid-template-columns: 2rem auto 1fr auto;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-artists li::before {
+    content: counter(rank);
+    font-family: var(--font-heading);
+    font-size: var(--text-h3);
+    color: var(--color-heading);
+}
+
+.top-artists img {
+    border-radius: 50%;
+}
+
+.top-artists b {
+    color: var(--color-heading);
+}
+
+.top-artists progress {
+    grid-column: 2 / -1;
+    width: 100%;
+    height: 0.75rem;
+    accent-color: var(--color-accent);
+}
+
+.top-artists li span {
+    grid-row: 1;
+    grid-column: 4;
+    font-size: var(--text-sm);
+}
+
+.on-repeat ol {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.on-repeat li {
+    padding-block: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.on-repeat li::marker {
+    color: var(--color-accent);
+}
+
+.on-repeat i {
+    color: var(--color-heading);
+    font-weight: 600;
+}
+
+.spotify iframe {
+    width: 100%;
+    border: 0;
+    border-radius: var(--radius);
+}
+
 /* different screen sizes */
 @media (min-width: 768px) {
     .hero {
@@ -474,6 +586,36 @@ nav[aria-label="Playlists"] a:hover {
     .about > img {
         grid-column: 1;
         grid-row: 1 / span 6;
+    }
+    .wrapped {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wrapped-intro,
+    .top-artists {
+        grid-column: 1 / -1;
+    }
+
+    .wrapped-intro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .wrapped-intro h1,
+    .wrapped-intro > p {
+        grid-column: 1 / -1;
+    }
+
+    .top-artists li {
+        grid-template-columns: 2rem auto 10rem 1fr auto;
+    }
+
+    .top-artists progress {
+        grid-row: 1;
+        grid-column: 4;
+    }
+
+    .top-artists li span {
+        grid-column: 5;
     }
 }
 
